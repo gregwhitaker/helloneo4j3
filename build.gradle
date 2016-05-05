@@ -1,0 +1,9 @@
+buildscript {
+    apply from: file('gradle/buildscript.gradle'), to: buildscript
+}
+
+apply from: file('gradle/blueprint.gradle')
+
+dependencies {
+    // TODO: Insert your application dependencies here!
+}

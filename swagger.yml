@@ -1,0 +1,89 @@
+swagger: '2.0'
+info:
+  title: __name__ API
+  description: Description of your API goes here!
+  version: "1.0.0"
+host: api.niketech.com
+schemes:
+  - https
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /example/message:
+    get:
+      summary: Retrieve current message.
+      description: |
+        The Message endpoint returns the current example message.
+      tags:
+        - Message
+      responses:
+        200:
+          description: Example message
+          schema:
+             $ref: '#/definitions/ExampleMessage'
+
+  /example/message/recipient:
+    put:
+      summary: Set message recipient.
+      description: |
+        The Recipient endpoint sets the recipient of the example message.
+      parameters:
+        - name: body
+          in: body
+          description: Name of the message recipient.
+          required: true
+          schema:
+             $ref: '#/definitions/ExampleRecipient'
+      tags:
+        - Message
+      responses:
+        200:
+          description: Successfully set the message recipient
+        default:
+          description: Error
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:
+  ExampleMessage:
+    type: object
+    properties:
+      text:
+        type: string
+        description: Message text.
+
+  ExampleRecipient:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Message recipient name.
+
+  FieldError:
+    type: object
+    properties:
+      field:
+        type: string
+      code:
+        type: string
+      message:
+        type: string
+
+  Error:
+    type: object
+    properties:
+      code:
+        type: string
+      timestamp:
+        type: string
+      resource:
+        type: string
+      request:
+        type: string
+      message:
+        type: string
+      fieldErrors:
+        type: array
+        items:
+          $ref: '#/definitions/FieldError'
