@@ -7,15 +7,22 @@ import org.neo4j.driver.v1.Record;
 import org.neo4j.driver.v1.Session;
 import org.neo4j.driver.v1.StatementResult;
 import org.neo4j.driver.v1.Values;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 @Component
 public class PersonRepository {
 
-    private final Driver driver;
+    @Value("${neo4j.hostname}")
+    private String hostname;
 
-    public PersonRepository() {
-        driver = GraphDatabase.driver("bolt://internal.neo4j-us-west-2.niketech.com");
+    private Driver driver;
+
+    @PostConstruct
+    private void init() {
+        driver = GraphDatabase.driver("bolt://" + hostname);
     }
 
     /**
@@ -32,6 +39,11 @@ public class PersonRepository {
         }
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     public Person find(String name) {
         Session session = driver.session();
 
