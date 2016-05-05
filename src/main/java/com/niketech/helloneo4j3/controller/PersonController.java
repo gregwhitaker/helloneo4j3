@@ -37,6 +37,7 @@ public class PersonController {
     )
     public ResponseEntity<AddPersonResponse> addPerson(@Valid @RequestBody AddPersonRequest addPersonRequest) {
         Person person = personService.addPerson(addPersonRequest.getName());
+
         return null;
     }
 
@@ -51,6 +52,7 @@ public class PersonController {
     )
     public ResponseEntity<FindPersonResponse> findPerson(@RequestParam("name") String name) {
         Person person = personService.findPerson(name);
+
         return null;
     }
 }

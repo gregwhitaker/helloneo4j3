@@ -5,5 +5,5 @@ buildscript {
 apply from: file('gradle/blueprint.gradle')
 
 dependencies {
-    // TODO: Insert your application dependencies here!
+    compile 'org.neo4j.driver:neo4j-java-driver:1.0.0'
 }
