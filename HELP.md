@@ -1,9 +1,7 @@
-Blueprint SpringBoot Reactive Rest Template
-===
-This project provides you with a starting point for developing reactive restful web services that conform to the
-tenets of the NikeTech Cloud Native Blueprint.
+# Blueprint SpringBoot Reactive Rest Template
+This project provides you with a starting point for developing reactive restful web services.
 
-##What does this template provide?
+## What does this template provide?
 
 * Standard SpringBoot deployment as a JAR or a Docker container
 * Standard error handling, messages, and error codes
@@ -12,10 +10,10 @@ tenets of the NikeTech Cloud Native Blueprint.
 * Built-in support for HATEOAS
 * Standard support for metrics delivery to DataDog
 
-##FAQ
+## FAQ
 The following are frequently asked questions about the usage of the template as well as building and deploying Blueprint template applications.
 
-###Build and Deploy
+### Build and Deploy
 
 * **How do I change the version of my service?**
   
