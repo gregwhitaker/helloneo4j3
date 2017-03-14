@@ -1,35 +1,34 @@
-helloneo4j3
-===
+# helloneo4j3
 
-__description__
+Hello world Neo4j example.
 
-##API
+## API
 
 The API contract for this service uses the Swagger specification and can be found in the [swagger.yml](swagger.yml) file
 at the root of this project.
 
-##Versioning
+## Versioning
 
 This service uses [Semantic Versioning](http://semver.org).  For detailed information on changes related to a specific
 version of the service please refer to the [Change Log](CHANGELOG.md).
 
-##Building the Service
+## Building the Service
 
 This project supports building the service as a standalone JAR and as a Docker container.
 
-###Jar
+### Jar
 
 The service can be built as a standalone JAR using the following command:
 
     $ ./gradlew clean build
 
-###Docker Container
+### Docker Container
 
 The service can be built as a Docker container using the following command:
 
     $ ./gradlew clean buildDocker
 
-##Running the Service
+## Running the Service
 
 The service can be ran locally using the supplied run script:
 
